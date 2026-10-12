@@ -27,7 +27,7 @@ export default function Hero() {
             href={profile.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-foreground/20 px-6 py-3 text-sm font-semibold transition-colors hover:border-foreground/50"
+            className="rounded-full border border-text/20 px-6 py-3 text-sm font-semibold transition-colors hover:border-text/50"
           >
             GitHub ↗
           </a>

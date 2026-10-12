@@ -53,14 +53,14 @@ export default async function ProjectPage({
       <div className="mx-auto w-full max-w-5xl py-10 lg:py-16">
         <Link
           href="/#projects"
-          className="text-sm text-muted transition-colors hover:text-foreground"
+          className="text-sm text-muted transition-colors hover:text-text"
         >
           ← Projects로 돌아가기
         </Link>
 
         <div className="mt-8 flex flex-col gap-10 lg:flex-row lg:items-start">
           {/* 9:16 미디어: 영상이 있으면 영상, 없으면 포스터 */}
-          <div className="relative mx-auto aspect-9/16 w-full max-w-90 shrink-0 overflow-hidden rounded-2xl bg-surface ring-1 ring-foreground/10 lg:mx-0">
+          <div className="relative mx-auto aspect-9/16 w-full max-w-90 shrink-0 overflow-hidden rounded-2xl bg-surface ring-1 ring-border lg:mx-0">
             {project.videoSrc ? (
               <video
                 src={project.videoSrc}
@@ -90,12 +90,12 @@ export default async function ProjectPage({
                   className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                     isTeam
                       ? "bg-accent text-accent-foreground"
-                      : "border border-foreground/30 text-foreground/80"
+                      : "border border-text/30 text-text/80"
                   }`}
                 >
                   {teamLabel(project.teamSize)}
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground/10 px-2 py-0.5 text-xs font-medium text-foreground/90">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-text/10 px-2 py-0.5 text-xs font-medium text-text/90">
                   <span
                     aria-hidden="true"
                     className={`size-1.5 rounded-full ${statusDotClass[project.status]}`}
@@ -105,13 +105,13 @@ export default async function ProjectPage({
               </div>
             </div>
 
-            <p className="leading-relaxed text-foreground/85">
+            <p className="leading-relaxed text-text/85">
               {project.summary}
             </p>
 
             {role && (
               <p className="text-sm text-muted">
-                <span className="font-semibold text-foreground">역할</span>{" "}
+                <span className="font-semibold text-text">역할</span>{" "}
                 {role}
               </p>
             )}
@@ -121,7 +121,7 @@ export default async function ProjectPage({
                 {stack.map((tech) => (
                   <li
                     key={tech}
-                    className="rounded-md bg-foreground/10 px-2 py-0.5 text-xs text-foreground/90"
+                    className="rounded-md bg-text/10 px-2 py-0.5 text-xs text-text/90"
                   >
                     {tech}
                   </li>

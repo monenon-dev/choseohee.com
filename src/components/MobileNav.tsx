@@ -47,7 +47,7 @@ export default function MobileNav() {
         <nav
           id="mobile-nav"
           aria-label="주요 메뉴"
-          className="absolute inset-x-0 top-full border-b border-foreground/10 bg-background"
+          className="absolute inset-x-0 top-full border-b border-border bg-bg"
         >
           <ul className="flex flex-col px-6 py-2">
             {navItems.map((item) => (
@@ -55,7 +55,7 @@ export default function MobileNav() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-muted transition-colors hover:text-foreground"
+                  className="block py-3 text-muted transition-colors hover:text-text"
                 >
                   {item.label}
                 </Link>

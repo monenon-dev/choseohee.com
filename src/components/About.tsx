@@ -9,7 +9,7 @@ export default function About() {
     <section id="about" className="px-6 py-24">
       <div className="mx-auto w-full max-w-3xl">
         <h2 className="text-3xl font-bold">About</h2>
-        <div className="mt-6 space-y-3 leading-relaxed text-foreground/85">
+        <div className="mt-6 space-y-3 leading-relaxed text-text/85">
           {profile.about.map((sentence) => (
             <p key={sentence}>{sentence}</p>
           ))}
