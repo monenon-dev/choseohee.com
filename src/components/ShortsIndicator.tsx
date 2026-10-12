@@ -22,7 +22,7 @@ export default function ShortsIndicator({
             key={i}
             aria-current={active ? "true" : undefined}
             className={`w-1 rounded-full transition-all duration-300 ${
-              active ? "h-10 bg-white" : "h-5 bg-white/30"
+              active ? "h-10 bg-accent" : "h-5 bg-foreground/30"
             }`}
           >
             <span className="sr-only">

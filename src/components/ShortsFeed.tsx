@@ -39,7 +39,7 @@ export default function ShortsFeed({ children, count }: ShortsFeedProps) {
   }, []);
 
   return (
-    <div className="relative h-dvh bg-black text-white">
+    <div className="relative h-dvh bg-background text-foreground">
       <div
         ref={scrollerRef}
         className="h-full snap-y snap-mandatory overflow-y-auto overscroll-y-contain [scrollbar-width:none]"
