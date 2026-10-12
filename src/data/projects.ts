@@ -1,91 +1,82 @@
+export type ProjectStatus = "completed" | "prototype" | "in-progress";
+
+export const projectStatusLabel: Record<ProjectStatus, string> = {
+  completed: "구현 완료",
+  prototype: "프로토타입",
+  "in-progress": "개발 중",
+};
+
+/** 포스터가 없는 프로젝트에 표시할 기본 이미지 */
+export const PLACEHOLDER_POSTER = "/posters/placeholder.svg";
+
 export type Project = {
   id: string;
   title: string;
   summary: string;
+  /** "TODO:"로 시작하면 화면에 표시되지 않습니다. */
   role: string;
   /** 1이면 개인 프로젝트, 2 이상이면 팀 프로젝트 */
   teamSize: number;
+  status: ProjectStatus;
+  /** "TODO:"로 시작하는 항목은 화면에 표시되지 않습니다. */
   stack: string[];
-  videoSrc: string;
-  poster: string;
+  /** 아직 영상이 없으면 생략합니다. */
+  videoSrc?: string;
+  /** 생략하면 PLACEHOLDER_POSTER가 표시됩니다. */
+  poster?: string;
   links: {
     github?: string;
     demo?: string;
   };
 };
 
+/** 데이터에 "TODO:"로 남겨 둔 값인지 확인합니다. */
+export const isTodo = (value: string) => value.trimStart().startsWith("TODO:");
+
 export const projects: Project[] = [
   {
-    id: "devlog",
-    title: "DevLog",
-    summary:
-      "마크다운 기반 개인 기술 블로그. 정적 생성과 태그 검색으로 빠른 탐색을 지원합니다.",
-    role: "기획 · 디자인 · 프론트엔드 · 배포 전체",
-    teamSize: 1,
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
-    videoSrc: "/videos/devlog.mp4",
-    poster: "/posters/devlog.svg",
-    links: {
-      github: "https://github.com/example/devlog",
-      demo: "https://example.com/devlog",
-    },
-  },
-  {
-    id: "mooddiary",
-    title: "MoodDiary",
-    summary:
-      "하루 감정을 기록하고 주간 통계를 차트로 보여주는 감정 일기 모바일 웹앱입니다.",
-    role: "프론트엔드 리드 · 차트 시각화 구현",
+    id: "callguard",
+    title: "CallGuard",
+    summary: "서울 120 다산콜센터 상담원을 위한 실시간 AI 보조 RAG 시스템",
+    role: "프론트엔드 리드",
     teamSize: 4,
-    stack: ["React", "TypeScript", "Zustand", "Recharts"],
-    videoSrc: "/videos/mooddiary.mp4",
-    poster: "/posters/mooddiary.svg",
+    status: "completed",
+    stack: ["Flutter", "TODO: 나머지 스택"],
     links: {
-      github: "https://github.com/example/mooddiary",
-      demo: "https://example.com/mooddiary",
+      // TODO: GitHub 링크
     },
   },
   {
-    id: "campus-market",
-    title: "Campus Market",
-    summary:
-      "같은 학교 학생끼리 중고 물품을 거래하는 플랫폼. 실시간 채팅과 찜 기능을 제공합니다.",
-    role: "채팅 UI · 상품 목록 무한 스크롤 담당",
-    teamSize: 5,
-    stack: ["Next.js", "TypeScript", "TanStack Query", "Socket.IO"],
-    videoSrc: "/videos/campus-market.mp4",
-    poster: "/posters/campus-market.svg",
-    links: {
-      github: "https://github.com/example/campus-market",
-    },
-  },
-  {
-    id: "studyroom",
-    title: "StudyRoom",
-    summary:
-      "온라인 스터디원과 뽀모도로 타이머를 공유하며 함께 공부하는 실시간 스터디룸입니다.",
-    role: "타이머 동기화 로직 · 반응형 레이아웃",
-    teamSize: 3,
-    stack: ["React", "Vite", "Firebase", "Tailwind CSS"],
-    videoSrc: "/videos/studyroom.mp4",
-    poster: "/posters/studyroom.svg",
-    links: {
-      github: "https://github.com/example/studyroom",
-      demo: "https://example.com/studyroom",
-    },
-  },
-  {
-    id: "weatherfit",
-    title: "WeatherFit",
-    summary:
-      "현재 날씨와 기온에 맞춰 오늘의 옷차림을 추천해 주는 개인 프로젝트입니다.",
-    role: "기획 · 프론트엔드 · 날씨 API 연동",
+    id: "moneo",
+    title: "Moneo",
+    summary: "AI 에이전트 오케스트레이션 플랫폼",
+    role: "TODO: 역할",
     teamSize: 1,
-    stack: ["Next.js", "TypeScript", "OpenWeather API"],
-    videoSrc: "/videos/weatherfit.mp4",
-    poster: "/posters/weatherfit.svg",
+    status: "completed",
+    stack: ["Flutter", "TODO: 나머지 스택"],
     links: {
-      demo: "https://example.com/weatherfit",
+      // TODO: GitHub 링크
     },
+  },
+  {
+    id: "pumsae",
+    title: "PUMSAE",
+    summary: "지역 태권도장/체육관 맞춤형 홍보 및 수강생 관리 플랫폼",
+    role: "TODO: 역할",
+    teamSize: 1,
+    status: "in-progress",
+    stack: ["Flutter", "TODO: 나머지 스택"],
+    links: {},
+  },
+  {
+    id: "kidslog",
+    title: "KidsLog",
+    summary: "아동 대상 현장을 위한 사진·영상 자동 정리 및 생성 플랫폼",
+    role: "TODO: 역할",
+    teamSize: 1,
+    // 로컬 테스트 수준의 프로토타입
+    status: "prototype",
+    stack: ["TODO: 스택"],
+    links: {},
   },
 ];

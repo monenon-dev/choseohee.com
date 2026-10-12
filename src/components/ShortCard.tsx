@@ -1,5 +1,11 @@
 import Image from "next/image";
-import type { Project } from "@/data/projects";
+import {
+  PLACEHOLDER_POSTER,
+  isTodo,
+  projectStatusLabel,
+  type Project,
+  type ProjectStatus,
+} from "@/data/projects";
 
 type ShortCardProps = {
   project: Project;
@@ -16,7 +22,7 @@ export default function ShortCard({ project, index }: ShortCardProps) {
       {/* 9:16 영상 영역. 지금은 poster 이미지만 표시합니다. */}
       <div className="relative aspect-9/16 w-[min(100%,calc((var(--feed-h)_-_3rem)*9/16))] shrink-0 overflow-hidden rounded-2xl bg-surface shadow-2xl">
         <Image
-          src={project.poster}
+          src={project.poster ?? PLACEHOLDER_POSTER}
           alt={`${project.title} 미리보기`}
           fill
           sizes="(min-width: 1024px) 480px, 100vw"
@@ -38,6 +44,12 @@ export default function ShortCard({ project, index }: ShortCardProps) {
   );
 }
 
+const statusDotClass: Record<ProjectStatus, string> = {
+  completed: "bg-accent",
+  "in-progress": "bg-accent/50",
+  prototype: "bg-muted",
+};
+
 function ProjectInfo({
   project,
   compact = false,
@@ -46,10 +58,13 @@ function ProjectInfo({
   compact?: boolean;
 }) {
   const isTeam = project.teamSize > 1;
+  // "TODO:"로 남겨 둔 값은 화면에 표시하지 않습니다.
+  const role = isTodo(project.role) ? null : project.role;
+  const stack = project.stack.filter((tech) => !isTodo(tech));
 
   return (
     <div className={compact ? "space-y-2" : "space-y-5"}>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <h2 className={compact ? "text-lg font-bold" : "text-3xl font-bold"}>
           {project.title}
         </h2>
@@ -61,6 +76,13 @@ function ProjectInfo({
           }`}
         >
           {isTeam ? `팀 ${project.teamSize}명` : "개인"}
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground/10 px-2 py-0.5 text-xs font-medium text-foreground/90">
+          <span
+            aria-hidden="true"
+            className={`size-1.5 rounded-full ${statusDotClass[project.status]}`}
+          />
+          {projectStatusLabel[project.status]}
         </span>
       </div>
 
@@ -74,21 +96,24 @@ function ProjectInfo({
         {project.summary}
       </p>
 
-      <p className={compact ? "text-xs text-muted" : "text-sm text-muted"}>
-        <span className="font-semibold text-foreground">역할</span>{" "}
-        {project.role}
-      </p>
+      {role && (
+        <p className={compact ? "text-xs text-muted" : "text-sm text-muted"}>
+          <span className="font-semibold text-foreground">역할</span> {role}
+        </p>
+      )}
 
-      <ul className="flex flex-wrap gap-1.5">
-        {project.stack.map((tech) => (
-          <li
-            key={tech}
-            className="rounded-md bg-foreground/10 px-2 py-0.5 text-xs text-foreground/90"
-          >
-            {tech}
-          </li>
-        ))}
-      </ul>
+      {stack.length > 0 && (
+        <ul className="flex flex-wrap gap-1.5">
+          {stack.map((tech) => (
+            <li
+              key={tech}
+              className="rounded-md bg-foreground/10 px-2 py-0.5 text-xs text-foreground/90"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
+      )}
 
       {(project.links.github || project.links.demo) && (
         <div className="flex gap-3 text-sm font-medium">
