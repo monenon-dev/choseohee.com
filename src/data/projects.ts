@@ -70,7 +70,7 @@ export const projects: Project[] = [
     id: "moneo",
     title: "Moneo",
     summary: "AI 에이전트 오케스트레이션 플랫폼",
-    role: "TODO: 역할",
+    role: "1인 개발 · 웹(Next.js) · 앱(Flutter) · 백엔드(FastAPI) · 인프라(Docker Compose)",
     teamSize: 1,
     status: "completed",
     stack: [
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     id: "pumsae",
     title: "PUMSAE",
     summary: "지역 태권도장/체육관 맞춤형 홍보 및 수강생 관리 플랫폼",
-    role: "TODO: 역할",
+    role: "1인 개발 · 웹(Next.js) · 앱(Flutter) · 백엔드(FastAPI)",
     teamSize: 1,
     status: "in-progress",
     stack: [
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     id: "kidslog",
     title: "KidsLog",
     summary: "아동 대상 현장을 위한 사진·영상 자동 정리 및 생성 플랫폼",
-    role: "TODO: 역할",
+    role: "1인 개발 · 기획 · 웹(Next.js) · 백엔드(FastAPI) · AI 연동(Claude API)",
     teamSize: 1,
     // 로컬 테스트 수준의 프로토타입
     status: "prototype",
