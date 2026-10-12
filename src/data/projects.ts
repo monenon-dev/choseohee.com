@@ -84,6 +84,8 @@ export const projects: Project[] = [
     // 로컬 테스트 수준의 프로토타입
     status: "prototype",
     stack: ["TODO: 스택"],
-    links: {},
+    links: {
+      github: "https://github.com/monenon-dev/kidslog",
+    },
   },
 ];
