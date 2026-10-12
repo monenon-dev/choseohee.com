@@ -87,6 +87,7 @@ export const projects: Project[] = [
     ],
     links: {
       github: "https://github.com/monenon-dev/monenon.cloud",
+      demo: "https://moneo.choseohee.com",
     },
   },
   {
@@ -106,7 +107,9 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Firebase Cloud Messaging",
     ],
-    links: {},
+    links: {
+      demo: "https://pumsae.choseohee.com",
+    },
   },
   {
     id: "kidslog",
