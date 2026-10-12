@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     id: "callguard",
     title: "CallGuard",
-    summary: "서울 120 다산콜센터 상담원을 위한 실시간 AI 보조 RAG 시스템",
+    summary: "서울 다산 콜센터 상담원을 위한 실시간 AI 보조 RAG 시스템",
     role: "프론트엔드 리드",
     teamSize: 4,
     status: "completed",
