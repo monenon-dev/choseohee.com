@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://choseohee.com"),
   title: "조서희 | Developer Portfolio",
   description: "choseohee.com — 개발자 조서희의 프로젝트 포트폴리오",
 };
