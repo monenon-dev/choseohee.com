@@ -11,10 +11,10 @@ export default function ShortCard({ project, index }: ShortCardProps) {
     <article
       data-short-index={index}
       aria-label={project.title}
-      className="flex h-dvh snap-start snap-always items-center justify-center gap-10 py-6 pr-8 pl-4 lg:px-16"
+      className="flex h-(--feed-h) snap-start snap-always items-center justify-center gap-10 py-6 pr-8 pl-4 lg:px-16"
     >
       {/* 9:16 영상 영역. 지금은 poster 이미지만 표시합니다. */}
-      <div className="relative aspect-9/16 w-[min(100%,calc((100dvh_-_3rem)*9/16))] shrink-0 overflow-hidden rounded-2xl bg-surface shadow-2xl">
+      <div className="relative aspect-9/16 w-[min(100%,calc((var(--feed-h)_-_3rem)*9/16))] shrink-0 overflow-hidden rounded-2xl bg-surface shadow-2xl">
         <Image
           src={project.poster}
           alt={`${project.title} 미리보기`}

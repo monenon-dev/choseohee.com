@@ -3,6 +3,9 @@
 /* 다크 우선 디자인 토큰. 강조색을 바꾸려면 --accent / --accent-foreground만 수정하세요. */
 :root {
   color-scheme: dark;
+  /* 고정 헤더 높이. Shorts 피드 높이(--feed-h)와 앵커 스크롤 오프셋이 이 값을 따릅니다. */
+  --header-h: 3.5rem;
+  --feed-h: calc(100dvh - var(--header-h));
   --background: #0b0b0f;
   --surface: #17171c;
   --foreground: #f4f4f5;
