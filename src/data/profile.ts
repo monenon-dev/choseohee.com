@@ -5,6 +5,8 @@ export type StackGroup = {
 };
 
 export type Profile = {
+  /** 헤더 로고와 브라우저 탭 제목에 쓰는 사이트 이름 */
+  siteName: string;
   name: string;
   position: string;
   heroIntro: [string, string];
@@ -18,6 +20,7 @@ export type Profile = {
 };
 
 export const profile: Profile = {
+  siteName: "choseohee",
   name: "조서희",
   position: "프론트엔드 개발자",
   // TODO: 직접 작성 (Hero 소개 2줄)
