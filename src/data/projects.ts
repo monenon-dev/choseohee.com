@@ -33,6 +33,13 @@ export type Project = {
 /** 데이터에 "TODO:"로 남겨 둔 값인지 확인합니다. */
 export const isTodo = (value: string) => value.trimStart().startsWith("TODO:");
 
+/** "개인" 또는 "팀 N명" */
+export const teamLabel = (teamSize: number) =>
+  teamSize > 1 ? `팀 ${teamSize}명` : "개인";
+
+export const getProject = (id: string) =>
+  projects.find((project) => project.id === id);
+
 export const projects: Project[] = [
   {
     id: "callguard",
