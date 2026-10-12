@@ -43,7 +43,7 @@ export const projects: Project[] = [
     status: "completed",
     stack: ["Flutter", "TODO: 나머지 스택"],
     links: {
-      // TODO: GitHub 링크
+      github: "https://github.com/monenon-dev/call.solidbob.cloud",
     },
   },
   {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     status: "completed",
     stack: ["Flutter", "TODO: 나머지 스택"],
     links: {
-      // TODO: GitHub 링크
+      github: "https://github.com/monenon-dev/monenon.cloud",
     },
   },
   {
