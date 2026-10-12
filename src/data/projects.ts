@@ -65,6 +65,7 @@ export const projects: Project[] = [
     poster: "/posters/callguard.webp",
     links: {
       github: "https://github.com/monenon-dev/call.solidbob.cloud",
+      demo: "https://solidbob.cloud",
     },
   },
   {
