@@ -62,6 +62,7 @@ export const projects: Project[] = [
       "Google Cloud Speech-to-Text",
       "Kubernetes",
     ],
+    poster: "/posters/callguard.webp",
     links: {
       github: "https://github.com/monenon-dev/call.solidbob.cloud",
     },
@@ -85,6 +86,7 @@ export const projects: Project[] = [
       "Redis",
       "Docker",
     ],
+    poster: "/posters/moneo.webp",
     links: {
       github: "https://github.com/monenon-dev/monenon.cloud",
       demo: "https://moneo.choseohee.com",
@@ -107,6 +109,7 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Firebase Cloud Messaging",
     ],
+    poster: "/posters/pumsae.webp",
     links: {
       demo: "https://pumsae.choseohee.com",
     },
@@ -130,6 +133,7 @@ export const projects: Project[] = [
       "Pillow",
       "Claude API",
     ],
+    poster: "/posters/kidslog.webp",
     links: {
       github: "https://github.com/monenon-dev/kidslog",
     },
