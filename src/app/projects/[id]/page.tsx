@@ -60,7 +60,7 @@ export default async function ProjectPage({
 
         <div className="mt-8 flex flex-col gap-10 lg:flex-row lg:items-start">
           {/* 9:16 미디어: 영상이 있으면 영상, 없으면 포스터 */}
-          <div className="relative mx-auto aspect-9/16 w-full max-w-90 shrink-0 overflow-hidden rounded-2xl bg-surface lg:mx-0">
+          <div className="relative mx-auto aspect-9/16 w-full max-w-90 shrink-0 overflow-hidden rounded-2xl bg-surface ring-1 ring-foreground/10 lg:mx-0">
             {project.videoSrc ? (
               <video
                 src={project.videoSrc}
