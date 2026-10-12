@@ -6,7 +6,7 @@ import { profile } from "@/data/profile";
 export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-(--header-h) border-b border-border bg-bg/80 backdrop-blur">
-      <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-6">
+      <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-6">
         <Link href="/" className="font-bold tracking-tight">
           {profile.siteName}
         </Link>

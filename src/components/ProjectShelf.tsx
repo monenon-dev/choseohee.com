@@ -9,8 +9,8 @@ export default function ProjectShelf() {
   } as CSSProperties;
 
   return (
-    <section id="projects" className="px-6 py-24">
-      <div className="mx-auto w-full max-w-5xl">
+    <section id="projects" className="py-24">
+      <div className="mx-auto w-full max-w-6xl px-6">
         <h2 className="text-3xl font-bold">Projects</h2>
 
         {/* lg 미만: 선반 안에서만 가로 스크롤. -mx-6/px-6로 화면 끝까지 넓히되 페이지 폭은 넘지 않습니다. */}

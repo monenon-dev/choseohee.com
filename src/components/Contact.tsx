@@ -4,8 +4,8 @@ export default function Contact() {
   const { github, email } = profile.links;
 
   return (
-    <section id="contact" className="px-6 py-24">
-      <div className="mx-auto w-full max-w-3xl">
+    <section id="contact" className="py-24">
+      <div className="mx-auto w-full max-w-6xl px-6">
         <h2 className="text-3xl font-bold">Contact</h2>
         <ul className="mt-6 space-y-3">
           <li>

@@ -49,8 +49,8 @@ export default async function ProjectPage({
   const poster = project.poster ?? PLACEHOLDER_POSTER;
 
   return (
-    <main className="px-6 pt-(--header-h)">
-      <div className="mx-auto w-full max-w-5xl py-10 lg:py-16">
+    <main className="pt-(--header-h)">
+      <div className="mx-auto w-full max-w-6xl px-6 py-10 lg:py-16">
         <Link
           href="/#projects"
           className="text-sm text-muted transition-colors hover:text-text"
