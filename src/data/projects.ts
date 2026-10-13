@@ -24,6 +24,8 @@ export type Project = {
   tags?: string[];
   /** 목록 카드 메타 줄에서 상태 대신 표시할 문구. 생략하면 상태가 표시됩니다. */
   listLabel?: string;
+  /** 상세 페이지 역할 줄 아래에 표시할 배포 정보. 생략하면 표시되지 않습니다. */
+  deploy?: string;
   /** 아직 영상이 없으면 생략합니다. */
   videoSrc?: string;
   /** 생략하면 PLACEHOLDER_POSTER가 표시됩니다. */
@@ -68,17 +70,12 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Firebase Cloud Messaging",
     ],
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Flutter",
-      "Vercel",
-      "Railway",
-      "Neon",
-      "Cloudflare R2",
-    ],
+    tags: ["Next.js", "Flutter", "FastAPI", "Neon", "Cloudflare R2"],
+    deploy:
+      "Vercel · Railway · Neon · Cloudflare R2 / Android 앱은 Google Play 테스트 중",
     poster: "/posters/pumsae.webp",
     links: {
+      github: "https://github.com/monenon-dev/pumsae",
       demo: "https://pumsae.choseohee.com",
     },
     // pumsae 레포 tailwind.config.ts의 pumsae.accent (주 버튼 bg-pumsae-accent)
@@ -89,18 +86,18 @@ export const projects: Project[] = [
   {
     id: "callguard",
     title: "CallGuard",
-    summary: "서울 120 다산콜센터 상담원을 위한 실시간 AI 보조 시스템",
-    role: "프론트엔드 전담",
+    summary: "서울시 다산콜센터 상담원을 위한 실시간 AI 보조 시스템",
+    role: "프론트엔드 전담 (서버 · AI · 인프라는 팀원 담당)",
     teamSize: 4,
     listLabel: "프론트엔드 전담",
     status: "completed",
     stack: [
-      "Flutter",
       "React",
       "TypeScript",
       "Vite",
       "Zustand",
       "Tailwind CSS",
+      "Flutter",
       "FastAPI",
       "PostgreSQL",
       "Elasticsearch",
@@ -109,7 +106,7 @@ export const projects: Project[] = [
       "Kubernetes",
     ],
     // 목록 카드에는 stack 중 프론트엔드 기술 5개만 표시합니다.
-    tags: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Flutter"],
+    tags: ["React", "TypeScript", "Zustand", "Vite", "Flutter"],
     poster: "/posters/callguard.webp",
     links: {
       github: "https://github.com/monenon-dev/call.solidbob.cloud",
@@ -135,7 +132,8 @@ export const projects: Project[] = [
       "Redis",
       "Docker",
     ],
-    tags: ["Next.js", "TypeScript", "Vercel", "GCP", "Neon"],
+    tags: ["Next.js", "Flutter", "FastAPI", "LangGraph", "PostgreSQL"],
+    deploy: "Vercel · GCP · Neon",
     poster: "/posters/moneo.webp",
     links: {
       github: "https://github.com/monenon-dev/monenon.cloud",

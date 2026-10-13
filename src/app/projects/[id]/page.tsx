@@ -90,11 +90,21 @@ export default async function ProjectPage({
               {project.summary}
             </p>
 
-            {role && (
-              <p className="text-sm text-muted">
-                <span className="font-semibold text-text">역할</span>{" "}
-                {role}
-              </p>
+            {(role || project.deploy) && (
+              <div className="space-y-1 text-sm text-muted">
+                {role && (
+                  <p>
+                    <span className="font-semibold text-text">역할</span>{" "}
+                    {role}
+                  </p>
+                )}
+                {project.deploy ? (
+                  <p>
+                    <span className="font-semibold text-text">배포</span>{" "}
+                    {project.deploy}
+                  </p>
+                ) : null}
+              </div>
             )}
 
             {stack.length > 0 && (

@@ -38,13 +38,24 @@ export const profile: Profile = {
     },
     {
       name: "App",
-      description: "PUMSAE Android 앱을 Google Play에서 테스트 중입니다.",
+      description:
+        "PUMSAE와 Moneo의 앱 화면을 Flutter로 만들었고, PUMSAE는 Google Play에서 테스트 중입니다.",
       items: ["Flutter (Dart)"],
     },
     {
-      name: "배포와 연결",
-      description: "API, DB, 파일 스토리지를 연결해 서비스를 직접 운영해 봤습니다.",
-      items: ["Vercel", "Railway", "GCP", "Neon", "Cloudflare R2"],
+      name: "서버와 배포",
+      description:
+        "FastAPI로 API를 만들고, DB와 스토리지를 연결해 직접 배포·운영해 봤습니다.",
+      items: [
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Vercel",
+        "Railway",
+        "GCP",
+        "Neon",
+        "Cloudflare R2",
+      ],
     },
   ],
   links: {
