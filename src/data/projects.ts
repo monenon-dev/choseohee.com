@@ -144,6 +144,7 @@ export const projects: Project[] = [
     poster: "/posters/kidslog.webp",
     links: {
       github: "https://github.com/monenon-dev/kidslog",
+      demo: "https://kidslog.choseohee.com",
     },
   },
 ];
