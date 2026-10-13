@@ -7,7 +7,7 @@ export default function NowBuilding() {
   const project = projects.find((item) => item.status === "in-progress");
   if (!project) return null;
 
-  // 프로젝트 accent는 칩 테두리와 상단 2px 라인에만 씁니다.
+  // 프로젝트 accent는 칩에만 씁니다(테두리는 원래 색).
   // 칩 글자는 어두운 배경에서 4.5:1 이상이 되도록 같은 색상·채도에서 명도만 65%까지 올립니다.
   const accentStyle = {
     "--project-accent": project.accent ?? "var(--accent)",
@@ -19,7 +19,7 @@ export default function NowBuilding() {
   return (
     <article
       style={accentStyle}
-      className="rounded-2xl border border-t-2 border-border border-t-(--project-accent) bg-surface p-5 shadow-sm transition-colors hover:border-x-text/30 hover:border-b-text/30 sm:p-8"
+      className="rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-text/30 sm:p-8"
     >
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm font-medium text-muted">지금 만드는 것</p>
