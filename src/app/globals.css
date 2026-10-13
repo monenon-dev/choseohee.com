@@ -29,6 +29,18 @@
     system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
     sans-serif;
   --font-mono: var(--font-geist-mono);
+  /* Hero 스크롤 단서 화살표. motion-safe: 에서만 사용합니다. */
+  --animate-nudge: nudge 2s ease-in-out infinite;
+
+  @keyframes nudge {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
 }
 
 body {
