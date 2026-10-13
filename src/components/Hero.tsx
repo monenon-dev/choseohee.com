@@ -21,9 +21,9 @@ export default function Hero() {
                 {profile.name}
               </h1>
               <div className="mt-4 max-w-2xl space-y-1 lg:mt-6 text-lg leading-relaxed text-soft">
-                {profile.heroIntro.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
+                {/* 메인 문구는 제목 색과 굵기로 서브보다 강조합니다. */}
+                <p className="font-semibold text-text">{profile.heroIntro[0]}</p>
+                <p>{profile.heroIntro[1]}</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3 lg:mt-8">
                 <a
@@ -55,7 +55,7 @@ export default function Hero() {
         <a
           href="#projects"
           aria-label="다음 섹션으로 이동"
-          className="mx-auto mb-6 flex flex-col items-center gap-1 text-xs text-muted transition-colors hover:text-text"
+          className="mx-auto mb-6 hidden flex-col items-center gap-1 text-xs text-muted transition-colors hover:text-text md:flex"
         >
           <span>Scroll</span>
           <span aria-hidden="true" className="motion-safe:animate-nudge">

@@ -22,6 +22,8 @@ export type Project = {
   stack: string[];
   /** 프로젝트 목록 카드에 표시할 태그. 생략하면 표시되지 않습니다. */
   tags?: string[];
+  /** 목록 카드 메타 줄에서 상태 대신 표시할 문구. 생략하면 상태가 표시됩니다. */
+  listLabel?: string;
   /** 아직 영상이 없으면 생략합니다. */
   videoSrc?: string;
   /** 생략하면 PLACEHOLDER_POSTER가 표시됩니다. */
@@ -87,9 +89,10 @@ export const projects: Project[] = [
   {
     id: "callguard",
     title: "CallGuard",
-    summary: "서울 120 다산콜센터 상담원을 위한 실시간 AI 보조 시스템. 프론트엔드 전체를 담당",
+    summary: "서울 120 다산콜센터 상담원을 위한 실시간 AI 보조 시스템",
     role: "프론트엔드 전담",
     teamSize: 4,
+    listLabel: "프론트엔드 전담",
     status: "completed",
     stack: [
       "Flutter",
@@ -105,6 +108,8 @@ export const projects: Project[] = [
       "Google Cloud Speech-to-Text",
       "Kubernetes",
     ],
+    // 목록 카드에는 stack 중 프론트엔드 기술 5개만 표시합니다.
+    tags: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Flutter"],
     poster: "/posters/callguard.webp",
     links: {
       github: "https://github.com/monenon-dev/call.solidbob.cloud",
@@ -156,6 +161,7 @@ export const projects: Project[] = [
       "Pillow",
       "Claude API",
     ],
+    tags: ["Next.js", "TypeScript", "FastAPI", "Claude API", "ffmpeg.wasm"],
     poster: "/posters/kidslog.webp",
     links: {
       github: "https://github.com/monenon-dev/kidslog",

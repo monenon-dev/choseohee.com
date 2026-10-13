@@ -24,6 +24,7 @@ export default function NowBuilding() {
       {project.note ? (
         <p className="mt-3 text-sm text-text sm:mt-4">{project.note}</p>
       ) : null}
+      <TagList tags={project.noteTags ?? []} className="mt-4" />
       <div className="mt-6 flex flex-wrap gap-3">
         {project.links.demo && (
           <a
@@ -42,7 +43,6 @@ export default function NowBuilding() {
           자세히 보기
         </Link>
       </div>
-      <TagList tags={project.noteTags ?? []} className="mt-6" />
     </article>
   );
 }

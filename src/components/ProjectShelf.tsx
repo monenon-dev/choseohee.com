@@ -16,7 +16,7 @@ export default function ProjectShelf() {
         {/* lg 미만: 선반 안에서만 가로 스크롤. -mx-6/px-6로 화면 끝까지 넓히되 페이지 폭은 넘지 않습니다. */}
         <ul
           style={shelfStyle}
-          className="-mx-6 mt-8 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] lg:mx-0 lg:grid lg:grid-cols-[repeat(var(--shelf-cols),minmax(0,15rem))] lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
+          className="-mx-6 mt-8 flex items-start snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] lg:mx-0 lg:grid lg:grid-cols-[repeat(var(--shelf-cols),minmax(0,15rem))] lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
         >
           {projects.map((project) => (
             <li

@@ -49,7 +49,6 @@ export const profile: Profile = {
   ],
   links: {
     github: "https://github.com/monenon-dev",
-    // TODO: 이메일 주소로 교체하세요. "TODO_EMAIL"인 동안에는 링크가 표시되지 않습니다.
-    email: "TODO_EMAIL",
+    email: "whtjgml2002@gmail.com",
   },
 };

@@ -17,7 +17,8 @@ export default function ProjectThumb({ project }: { project: Project }) {
         {project.title}
       </h3>
       <p className="mt-1 text-sm text-muted">
-        {teamLabel(project.teamSize)} · {projectStatusLabel[project.status]}
+        {teamLabel(project.teamSize)} ·{" "}
+        {project.listLabel ?? projectStatusLabel[project.status]}
       </p>
       <p className="mt-2 line-clamp-2 text-sm leading-snug text-soft">
         {project.summary}
