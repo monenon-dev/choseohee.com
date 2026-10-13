@@ -9,7 +9,7 @@ export default function ProjectShelf() {
   } as CSSProperties;
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="pt-10 pb-24 lg:pt-24">
       <div className="mx-auto w-full max-w-6xl px-6">
         <h2 className="text-3xl font-bold">Projects</h2>
 

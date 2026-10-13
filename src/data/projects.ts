@@ -28,6 +28,8 @@ export type Project = {
     github?: string;
     demo?: string;
   };
+  /** Hero의 "지금 만드는 것" 카드에 표시할 짧은 진행 상황. 생략하면 표시되지 않습니다. */
+  note?: string;
 };
 
 /** 데이터에 "TODO:"로 남겨 둔 값인지 확인합니다. */
@@ -114,6 +116,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://pumsae.choseohee.com",
     },
+    note: "Android 앱 출시 준비 중",
   },
   {
     id: "kidslog",
