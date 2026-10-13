@@ -18,8 +18,10 @@ export type Project = {
   /** 1이면 개인 프로젝트, 2 이상이면 팀 프로젝트 */
   teamSize: number;
   status: ProjectStatus;
-  /** "TODO:"로 시작하는 항목은 화면에 표시되지 않습니다. */
+  /** 상세 페이지에 표시할 전체 기술 스택. "TODO:"로 시작하는 항목은 화면에 표시되지 않습니다. */
   stack: string[];
+  /** 프로젝트 목록 카드에 표시할 태그. 생략하면 표시되지 않습니다. */
+  tags?: string[];
   /** 아직 영상이 없으면 생략합니다. */
   videoSrc?: string;
   /** 생략하면 PLACEHOLDER_POSTER가 표시됩니다. */
@@ -32,6 +34,8 @@ export type Project = {
   accent?: string;
   /** Hero의 "지금 만드는 것" 카드에 표시할 짧은 진행 상황. 생략하면 표시되지 않습니다. */
   note?: string;
+  /** Hero의 "지금 만드는 것" 카드 하단에 표시할 태그. 생략하면 표시되지 않습니다. */
+  noteTags?: string[];
 };
 
 /** 데이터에 "TODO:"로 남겨 둔 값인지 확인합니다. */
@@ -46,10 +50,45 @@ export const getProject = (id: string) =>
 
 export const projects: Project[] = [
   {
+    id: "pumsae",
+    title: "PUMSAE",
+    summary: "지역 태권도장·체육관 맞춤형 홍보 및 수강생 관리 플랫폼",
+    role: "1인 개발 · 웹(Next.js) · 앱(Flutter) · 백엔드(FastAPI)",
+    teamSize: 1,
+    status: "in-progress",
+    stack: [
+      "Flutter",
+      "Riverpod",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "FastAPI",
+      "PostgreSQL",
+      "Firebase Cloud Messaging",
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Flutter",
+      "Vercel",
+      "Railway",
+      "Neon",
+      "Cloudflare R2",
+    ],
+    poster: "/posters/pumsae.webp",
+    links: {
+      demo: "https://pumsae.choseohee.com",
+    },
+    // pumsae 레포 tailwind.config.ts의 pumsae.accent (주 버튼 bg-pumsae-accent)
+    accent: "#B4222E",
+    note: "Google Play 테스트 중",
+    noteTags: ["웹", "Flutter 앱", "Neon", "Cloudflare R2", "Vercel", "Railway"],
+  },
+  {
     id: "callguard",
     title: "CallGuard",
-    summary: "서울 다산 콜센터 상담원을 위한 실시간 AI 보조 RAG 시스템",
-    role: "프론트엔드 리드",
+    summary: "서울 120 다산콜센터 상담원을 위한 실시간 AI 보조 시스템. 프론트엔드 전체를 담당",
+    role: "프론트엔드 전담",
     teamSize: 4,
     status: "completed",
     stack: [
@@ -91,36 +130,12 @@ export const projects: Project[] = [
       "Redis",
       "Docker",
     ],
+    tags: ["Next.js", "TypeScript", "Vercel", "GCP", "Neon"],
     poster: "/posters/moneo.webp",
     links: {
       github: "https://github.com/monenon-dev/monenon.cloud",
       demo: "https://moneo.choseohee.com",
     },
-  },
-  {
-    id: "pumsae",
-    title: "PUMSAE",
-    summary: "지역 태권도장/체육관 맞춤형 홍보 및 수강생 관리 플랫폼",
-    role: "1인 개발 · 웹(Next.js) · 앱(Flutter) · 백엔드(FastAPI)",
-    teamSize: 1,
-    status: "in-progress",
-    stack: [
-      "Flutter",
-      "Riverpod",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "FastAPI",
-      "PostgreSQL",
-      "Firebase Cloud Messaging",
-    ],
-    poster: "/posters/pumsae.webp",
-    links: {
-      demo: "https://pumsae.choseohee.com",
-    },
-    // pumsae 레포 tailwind.config.ts의 pumsae.accent (주 버튼 bg-pumsae-accent)
-    accent: "#B4222E",
-    note: "Android 앱 출시 준비 중",
   },
   {
     id: "kidslog",

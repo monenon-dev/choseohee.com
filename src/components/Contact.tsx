@@ -1,7 +1,10 @@
 import { profile } from "@/data/profile";
 
 export default function Contact() {
-  const { github, email } = profile.links;
+  const { github } = profile.links;
+  // 자리표시자("TODO_EMAIL")가 그대로 배포되지 않도록, 실제 주소가 들어오기 전에는 링크를 숨깁니다.
+  const email =
+    profile.links.email === "TODO_EMAIL" ? "" : profile.links.email;
 
   return (
     <section id="contact" className="py-24">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import StatusChip from "@/components/StatusChip";
+import TagList from "@/components/TagList";
 import { projects } from "@/data/projects";
 
 export default function NowBuilding() {
@@ -41,6 +42,7 @@ export default function NowBuilding() {
           자세히 보기
         </Link>
       </div>
+      <TagList tags={project.noteTags ?? []} className="mt-6" />
     </article>
   );
 }

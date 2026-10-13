@@ -23,6 +23,9 @@ export default function About() {
                 <dt className="text-sm font-semibold text-muted">
                   {group.name}
                 </dt>
+                {group.description ? (
+                  <dd className="mt-1 text-sm text-soft">{group.description}</dd>
+                ) : null}
                 <dd className="mt-3">
                   <ul className="flex flex-wrap gap-2">
                     {group.items.map((item) => (

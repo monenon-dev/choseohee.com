@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ProjectPoster from "@/components/ProjectPoster";
+import TagList from "@/components/TagList";
 import { projectStatusLabel, teamLabel, type Project } from "@/data/projects";
 
 export default function ProjectThumb({ project }: { project: Project }) {
@@ -18,6 +19,10 @@ export default function ProjectThumb({ project }: { project: Project }) {
       <p className="mt-1 text-sm text-muted">
         {teamLabel(project.teamSize)} · {projectStatusLabel[project.status]}
       </p>
+      <p className="mt-2 line-clamp-2 text-sm leading-snug text-soft">
+        {project.summary}
+      </p>
+      <TagList tags={project.tags ?? []} className="mt-3" />
     </Link>
   );
 }
