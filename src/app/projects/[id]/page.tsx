@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import StatusChip from "@/components/StatusChip";
 import { profile } from "@/data/profile";
 import {
   PLACEHOLDER_POSTER,
   getProject,
   isTodo,
-  projectStatusLabel,
   projects,
   teamLabel,
-  type ProjectStatus,
 } from "@/data/projects";
 
 export async function generateStaticParams() {
@@ -28,12 +27,6 @@ export async function generateMetadata({
     description: project.summary,
   };
 }
-
-const statusDotClass: Record<ProjectStatus, string> = {
-  completed: "bg-text",
-  "in-progress": "bg-text/70",
-  prototype: "bg-muted",
-};
 
 export default async function ProjectPage({
   params,
@@ -85,16 +78,11 @@ export default async function ProjectPage({
             <div className="space-y-3">
               <h1 className="text-4xl font-bold">{project.title}</h1>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-full border border-text/30 px-2 py-0.5 text-xs font-medium text-text/80">
+                {/* 상태 칩과 같은 크기·색으로 맞춥니다. */}
+                <span className="rounded-full border border-border px-3 py-1 text-xs font-medium text-soft">
                   {teamLabel(project.teamSize)}
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-text/10 px-2 py-0.5 text-xs font-medium text-text/90">
-                  <span
-                    aria-hidden="true"
-                    className={`size-1.5 rounded-full ${statusDotClass[project.status]}`}
-                  />
-                  {projectStatusLabel[project.status]}
-                </span>
+                <StatusChip project={project} />
               </div>
             </div>
 

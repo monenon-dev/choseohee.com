@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { projects, projectStatusLabel } from "@/data/projects";
+import StatusChip from "@/components/StatusChip";
+import { projects } from "@/data/projects";
 
 export default function NowBuilding() {
   // 개발 중인 첫 프로젝트만 보여 주고, 없으면 카드를 그리지 않습니다.
@@ -10,15 +11,7 @@ export default function NowBuilding() {
     <article className="rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-text/30 sm:p-8">
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm font-medium text-muted">지금 만드는 것</p>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs font-medium text-soft">
-          {/* 프로젝트 accent는 이 점에만 씁니다. 없으면 보조 글자색. */}
-          <span
-            aria-hidden="true"
-            className="size-1.5 rounded-full"
-            style={{ backgroundColor: project.accent ?? "var(--text-muted)" }}
-          />
-          {projectStatusLabel[project.status]}
-        </span>
+        <StatusChip project={project} />
       </div>
       <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
         {project.title}
