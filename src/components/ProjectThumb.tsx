@@ -6,7 +6,7 @@ export default function ProjectThumb({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="group block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      className="group block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text"
     >
       <ProjectPoster
         project={project}

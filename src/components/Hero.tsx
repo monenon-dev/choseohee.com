@@ -14,13 +14,13 @@ export default function Hero() {
         <div className="flex flex-1 items-center py-4 lg:py-12">
           <div className="w-full lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
             <div>
-              <p className="text-sm font-medium text-accent">
+              <p className="text-sm font-medium text-soft">
                 {profile.position}
               </p>
               <h1 className="mt-3 text-[clamp(4.5rem,11vw,9rem)] leading-none font-bold tracking-tight">
                 {profile.name}
               </h1>
-              <div className="mt-4 max-w-2xl space-y-1 lg:mt-6 text-lg leading-relaxed text-muted">
+              <div className="mt-4 max-w-2xl space-y-1 lg:mt-6 text-lg leading-relaxed text-soft">
                 {profile.heroIntro.map((line) => (
                   <p key={line}>{line}</p>
                 ))}

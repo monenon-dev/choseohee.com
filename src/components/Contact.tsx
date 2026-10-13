@@ -13,7 +13,7 @@ export default function Contact() {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent underline-offset-4 hover:underline"
+              className="text-text underline-offset-4 transition-colors hover:text-accent hover:underline"
             >
               GitHub ↗
             </a>
@@ -22,7 +22,7 @@ export default function Contact() {
             <li>
               <a
                 href={`mailto:${email}`}
-                className="text-accent underline-offset-4 hover:underline"
+                className="text-text underline-offset-4 transition-colors hover:text-accent hover:underline"
               >
                 {email}
               </a>

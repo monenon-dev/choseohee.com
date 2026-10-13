@@ -28,6 +28,8 @@ export type Project = {
     github?: string;
     demo?: string;
   };
+  /** 프로젝트 대표색(서비스의 주 버튼/브랜드 색). 생략하면 사이트 --accent를 씁니다. */
+  accent?: string;
   /** Hero의 "지금 만드는 것" 카드에 표시할 짧은 진행 상황. 생략하면 표시되지 않습니다. */
   note?: string;
 };
@@ -116,6 +118,8 @@ export const projects: Project[] = [
     links: {
       demo: "https://pumsae.choseohee.com",
     },
+    // pumsae 레포 tailwind.config.ts의 pumsae.accent (주 버튼 bg-pumsae-accent)
+    accent: "#B4222E",
     note: "Android 앱 출시 준비 중",
   },
   {

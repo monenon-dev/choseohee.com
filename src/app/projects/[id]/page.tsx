@@ -30,8 +30,8 @@ export async function generateMetadata({
 }
 
 const statusDotClass: Record<ProjectStatus, string> = {
-  completed: "bg-accent",
-  "in-progress": "bg-accent/50",
+  completed: "bg-text",
+  "in-progress": "bg-text/70",
   prototype: "bg-muted",
 };
 
@@ -42,7 +42,6 @@ export default async function ProjectPage({
   const project = getProject(id);
   if (!project) notFound();
 
-  const isTeam = project.teamSize > 1;
   // "TODO:"로 남겨 둔 값은 화면에 표시하지 않습니다.
   const role = isTodo(project.role) ? null : project.role;
   const stack = project.stack.filter((tech) => !isTodo(tech));
@@ -86,13 +85,7 @@ export default async function ProjectPage({
             <div className="space-y-3">
               <h1 className="text-4xl font-bold">{project.title}</h1>
               <div className="flex flex-wrap gap-2">
-                <span
-                  className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                    isTeam
-                      ? "bg-accent text-accent-foreground"
-                      : "border border-text/30 text-text/80"
-                  }`}
-                >
+                <span className="rounded-full border border-text/30 px-2 py-0.5 text-xs font-medium text-text/80">
                   {teamLabel(project.teamSize)}
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-text/10 px-2 py-0.5 text-xs font-medium text-text/90">
@@ -105,7 +98,7 @@ export default async function ProjectPage({
               </div>
             </div>
 
-            <p className="leading-relaxed text-text/85">
+            <p className="leading-relaxed text-soft">
               {project.summary}
             </p>
 
@@ -136,7 +129,7 @@ export default async function ProjectPage({
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent underline-offset-4 hover:underline"
+                    className="text-text underline-offset-4 transition-colors hover:text-accent hover:underline"
                   >
                     GitHub ↗
                   </a>
@@ -146,7 +139,7 @@ export default async function ProjectPage({
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent underline-offset-4 hover:underline"
+                    className="text-text underline-offset-4 transition-colors hover:text-accent hover:underline"
                   >
                     Demo ↗
                   </a>
