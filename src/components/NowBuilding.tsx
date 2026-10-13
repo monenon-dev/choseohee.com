@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import { projects, projectStatusLabel } from "@/data/projects";
 
@@ -7,23 +6,17 @@ export default function NowBuilding() {
   const project = projects.find((item) => item.status === "in-progress");
   if (!project) return null;
 
-  // 프로젝트 accent는 칩에만 씁니다(테두리는 원래 색).
-  // 칩 글자는 어두운 배경에서 4.5:1 이상이 되도록 같은 색상·채도에서 명도만 65%까지 올립니다.
-  const accentStyle = {
-    "--project-accent": project.accent ?? "var(--accent)",
-    "--project-accent-text": project.accent
-      ? `hsl(from ${project.accent} h s max(l, 65))`
-      : "var(--accent)",
-  } as CSSProperties;
-
   return (
-    <article
-      style={accentStyle}
-      className="rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-text/30 sm:p-8"
-    >
+    <article className="rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-text/30 sm:p-8">
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm font-medium text-muted">지금 만드는 것</p>
-        <span className="rounded-full border border-(--project-accent) px-3 py-1 text-xs font-medium text-(--project-accent-text)">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs font-medium text-soft">
+          {/* 프로젝트 accent는 이 점에만 씁니다. 없으면 보조 글자색. */}
+          <span
+            aria-hidden="true"
+            className="size-1.5 rounded-full"
+            style={{ backgroundColor: project.accent ?? "var(--text-muted)" }}
+          />
           {projectStatusLabel[project.status]}
         </span>
       </div>
