@@ -9,7 +9,7 @@ type ProjectPosterProps = {
   className?: string;
 };
 
-/** 9:16 프로젝트 썸네일. poster가 없으면 기본 포스터를 씁니다. */
+/** 5:4 가로 프로젝트 썸네일. 세로 포스터에서 히어로 부분(posterFocus)만 잘라 보여 주며, poster가 없으면 기본 포스터를 씁니다. */
 export default function ProjectPoster({
   project,
   sizes,
@@ -18,7 +18,7 @@ export default function ProjectPoster({
 }: ProjectPosterProps) {
   return (
     <div
-      className={`relative aspect-9/16 overflow-hidden rounded-xl bg-surface ring-1 ring-border ${className}`}
+      className={`relative aspect-5/4 overflow-hidden bg-surface ${className}`}
     >
       <Image
         src={project.poster ?? PLACEHOLDER_POSTER}
@@ -26,7 +26,8 @@ export default function ProjectPoster({
         fill
         sizes={sizes}
         preload={preload}
-        className="object-cover object-top"
+        className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+        style={{ objectPosition: project.posterFocus ?? "50% 0%" }}
       />
     </div>
   );

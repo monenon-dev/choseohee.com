@@ -30,6 +30,8 @@ export type Project = {
   videoSrc?: string;
   /** 생략하면 PLACEHOLDER_POSTER가 표시됩니다. */
   poster?: string;
+  /** 가로 썸네일에서 보여 줄 포스터 위치(CSS object-position). 생략하면 맨 위(히어로)를 보여 줍니다. */
+  posterFocus?: string;
   links: {
     github?: string;
     demo?: string;
@@ -83,6 +85,8 @@ export const projects: Project[] = [
     tags: ["JavaScript", "React", "Express", "Prisma", "JWT", "Supabase"],
     deploy: "Vercel · Render · Supabase · Cloudflare DNS",
     poster: "/posters/trip-diner.webp",
+    // 히어로 문구와 버튼이 포스터 중간쯤에 있어서 그 부분을 보여 줍니다.
+    posterFocus: "50% 55%",
     links: {
       github: "https://github.com/monenon-dev/Trip-diner-main",
       demo: "https://trip.choseohee.com",
