@@ -63,6 +63,7 @@ export const projects: Project[] = [
     listLabel: "인증 · 게시판 담당",
     status: "completed",
     stack: [
+      "JavaScript",
       "React",
       "React Router",
       "Axios",
@@ -78,8 +79,8 @@ export const projects: Project[] = [
       "한국관광공사 Tour API",
       "NAVER 검색 API",
     ],
-    // 목록 카드에는 담당 페이지(인증 · 게시판)에서 쓴 기술 위주로 5개만 표시합니다.
-    tags: ["React", "Express", "Prisma", "JWT", "Supabase"],
+    // 목록 카드에는 담당 페이지(인증 · 게시판)에서 쓴 기술 위주로 표시합니다.
+    tags: ["JavaScript", "React", "Express", "Prisma", "JWT", "Supabase"],
     deploy: "Vercel · Render · Supabase · Cloudflare DNS",
     poster: "/posters/trip-diner.webp",
     links: {
@@ -92,7 +93,7 @@ export const projects: Project[] = [
   {
     id: "callguard",
     title: "CallGuard",
-    summary: "서울시 다산콜센터 상담원을 위한 실시간 AI 보조 시스템",
+    summary: "다산콜센터 상담원을 위한 실시간 AI 보조 시스템",
     role: "프론트엔드 전담 (서버 · AI · 인프라는 팀원 담당)",
     teamSize: 4,
     listLabel: "프론트엔드 전담",
@@ -104,6 +105,7 @@ export const projects: Project[] = [
       "Zustand",
       "Tailwind CSS",
       "Flutter",
+      "Python",
       "FastAPI",
       "PostgreSQL",
       "Elasticsearch",
@@ -132,11 +134,12 @@ export const projects: Project[] = [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
+      "Python",
       "FastAPI",
       "PostgreSQL",
       "Firebase Cloud Messaging",
     ],
-    tags: ["Next.js", "Flutter", "FastAPI", "Neon", "Cloudflare R2"],
+    tags: ["Next.js", "Flutter", "Python", "FastAPI", "Neon", "Cloudflare R2"],
     deploy:
       "Vercel · Railway · Neon · Cloudflare R2 / Android 앱은 Google Play 테스트 중",
     poster: "/posters/pumsae.webp",
@@ -162,13 +165,14 @@ export const projects: Project[] = [
       "TypeScript",
       "Tailwind CSS",
       "ffmpeg.wasm",
+      "Python",
       "FastAPI",
       "SQLAlchemy",
       "SQLite",
       "Pillow",
       "Claude API",
     ],
-    tags: ["Next.js", "TypeScript", "FastAPI", "Claude API", "ffmpeg.wasm"],
+    tags: ["Next.js", "TypeScript", "Python", "FastAPI", "Claude API", "ffmpeg.wasm"],
     poster: "/posters/kidslog.webp",
     links: {
       github: "https://github.com/monenon-dev/kidslog",
@@ -187,6 +191,7 @@ export const projects: Project[] = [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
+      "Python",
       "FastAPI",
       "LangGraph",
       "PostgreSQL (pgvector)",
@@ -194,7 +199,7 @@ export const projects: Project[] = [
       "Redis",
       "Docker",
     ],
-    tags: ["Next.js", "Flutter", "FastAPI", "LangGraph", "PostgreSQL"],
+    tags: ["Next.js", "Flutter", "Python", "FastAPI", "LangGraph", "PostgreSQL"],
     deploy: "Vercel · GCP · Neon",
     poster: "/posters/moneo.webp",
     links: {
