@@ -8,7 +8,7 @@ export default function ProjectThumb({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="group flex h-full items-start gap-4 rounded-2xl border border-border bg-surface p-3 shadow-sm transition-colors hover:border-text/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text sm:gap-5 sm:p-4"
+      className="group flex h-full items-start gap-4 rounded-2xl border border-border bg-surface p-3 shadow-sm transition-[border-color,box-shadow,translate] hover:border-accent/50 hover:shadow-[0_0_40px_-12px_var(--accent)] motion-safe:hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text sm:gap-5 sm:p-4"
     >
       <ProjectPoster
         project={project}

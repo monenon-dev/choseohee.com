@@ -1,4 +1,4 @@
-import NowBuilding from "@/components/NowBuilding";
+import ParticleField from "@/components/ParticleField";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 
@@ -8,27 +8,39 @@ export default function Hero() {
   const soloCount = projects.length - teamCount;
 
   return (
-    <section id="home" className="pt-(--header-h)">
+    <section
+      id="home"
+      className="relative isolate overflow-hidden pt-(--header-h)"
+    >
+      <ParticleField className="pointer-events-none absolute inset-0 -z-10 size-full" />
+      {/* 아래 섹션과 자연스럽게 이어지도록 Hero 하단을 배경색으로 페이드합니다. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-linear-to-b from-transparent to-bg"
+      />
       {/* 헤더 높이만큼은 section 패딩이 차지하므로, 안쪽 높이를 그만큼 빼서 첫 화면을 정확히 채웁니다. */}
       <div className="mx-auto flex min-h-[calc(100svh-var(--header-h))] w-full max-w-6xl flex-col px-6">
         <div className="flex flex-1 items-center py-4 lg:py-12">
+          {/* 오른쪽 절반은 파티클 사람이 보이도록 비워 둡니다. */}
           <div className="w-full lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
             <div>
               <p className="text-sm font-medium text-soft">
                 {profile.position}
               </p>
-              <h1 className="mt-3 text-[clamp(4.5rem,11vw,9rem)] leading-none font-bold tracking-tight">
+              <h1 className="mt-3 text-[clamp(4.5rem,11vw,9rem)] leading-none font-bold tracking-tight text-gradient">
                 {profile.name}
               </h1>
               <div className="mt-4 max-w-2xl space-y-1 lg:mt-6 text-lg leading-relaxed text-soft">
                 {/* 메인 문구는 제목 색과 굵기로 서브보다 강조합니다. */}
-                <p className="font-semibold text-text">{profile.heroIntro[0]}</p>
+                <p className="font-semibold text-text">
+                  {profile.heroIntro[0]}
+                </p>
                 <p>{profile.heroIntro[1]}</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3 lg:mt-8">
                 <a
                   href="#projects"
-                  className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
+                  className="rounded-full bg-linear-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_0_32px_-8px_var(--accent)] transition-shadow hover:shadow-[0_0_48px_-4px_var(--accent)]"
                 >
                   Projects 보기
                 </a>
@@ -36,7 +48,7 @@ export default function Hero() {
                   href={profile.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-text/20 px-6 py-3 text-sm font-semibold transition-colors hover:border-text/50"
+                  className="rounded-full border border-text/20 bg-bg/40 px-6 py-3 text-sm font-semibold backdrop-blur transition-colors hover:border-text/50"
                 >
                   GitHub ↗
                 </a>
@@ -44,10 +56,12 @@ export default function Hero() {
               <p className="mt-4 text-sm text-muted lg:mt-6">
                 Projects {projects.length} · 팀 {teamCount} · 개인 {soloCount}
               </p>
-            </div>
-
-            <div className="mt-8 lg:mt-0">
-              <NowBuilding />
+              <p
+                aria-hidden="true"
+                className="mt-2 hidden text-xs text-muted motion-safe:md:block"
+              >
+                ✦ 마우스를 움직이거나 클릭해 보세요
+              </p>
             </div>
           </div>
         </div>
