@@ -21,7 +21,7 @@ type Particle = {
   scatter: Vec3;
 };
 
-const HOLD_MS = 7000;
+const HOLD_MS = 9000;
 const MORPH_MS = 3400;
 const SCATTER = 0.1;
 // 이름 쪽(왼쪽)을 비스듬히 바라보는 3/4 각도를 기본으로, 그 주변에서 아주 천천히 몸을 돌립니다.
