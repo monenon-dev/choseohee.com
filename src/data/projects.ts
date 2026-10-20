@@ -117,9 +117,10 @@ export const projects: Project[] = [
     id: "trip-diner",
     title: "Trip-Diner",
     summary: "취향을 고르면 AI가 국내 여행 코스를 짜 주는 '여행 메뉴판' 서비스",
-    role: "프론트엔드 담당 (React) · 배포 이전 (MySQL → Supabase, Vercel · Render)",
+    // 팀원별로 페이지를 나눠 프론트엔드와 백엔드를 함께 맡은 프로젝트
+    role: "회원가입 · 로그인 · 비밀번호 재설정, 게시판 담당 (React 화면 + Express API) · 배포 이전 (MySQL → Supabase, Vercel · Render)",
     teamSize: 4,
-    listLabel: "프론트엔드 담당",
+    listLabel: "인증 · 게시판 담당",
     status: "completed",
     stack: [
       "React",
@@ -129,14 +130,16 @@ export const projects: Project[] = [
       "Naver Maps API",
       "Express",
       "Prisma",
+      "JWT",
+      "Nodemailer",
       "PostgreSQL (Supabase)",
       "Supabase Storage",
       "OpenAI API",
       "한국관광공사 Tour API",
       "NAVER 검색 API",
     ],
-    // 목록 카드에는 프론트엔드 위주로 5개만 표시합니다.
-    tags: ["React", "React Router", "Naver Maps", "Express", "Supabase"],
+    // 목록 카드에는 담당 페이지(인증 · 게시판)에서 쓴 기술 위주로 5개만 표시합니다.
+    tags: ["React", "Express", "Prisma", "JWT", "Supabase"],
     deploy: "Vercel · Render · Supabase · Cloudflare DNS",
     poster: "/posters/trip-diner.webp",
     links: {
